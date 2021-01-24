@@ -1,0 +1,15 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - bin/**/*
+    - config/**/*
+    - db/**/*
+    - spec/**/*
+    - Gemfile
+
+Style/Documentation:
+  Enabled: false
+
+Security/YAMLLoad:
+  Exclude:
+    - lib/crypto.rb

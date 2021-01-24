@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  host: <%= ENV['MYSQL_HOST'] || 'localhost' %>
+  username: <%= ENV['MYSQL_USER'] %>
+  password: <%= ENV['MYSQL_PASS'] %>
+  port: <%= ENV['MYSQL_PORT'] || 3306 %>
+  pool: <%= ENV['DB_POOL'] || 2 %>
+  collation: utf8_general_ci
+
+development:
+  <<: *default
+  database: crypto_development
+
+test:
+  <<: *default
+  database: crypto_test
+
+production:
+  <<: *default
+  database: crypto_production
